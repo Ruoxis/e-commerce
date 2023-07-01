@@ -14,7 +14,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pandas
 from unit.tool import Excle
-# from unit import Excle
+
 options = webdriver.ChromeOptions()
 options.add_experimental_option('detach', True)
 driver = webdriver.Chrome(options=options)
@@ -69,3 +69,7 @@ if len(img_url) == len(img_name) and (len(sku_item_name_) == len(discountPrice_p
     })
     for index, i in enumerate(sku_item_sale_num_):
         print(sku_item_name_[index], discountPrice_price_[index], i)
+elif len(img_url) != len(img_name):
+    print("len(img_url) != len(img_name)")
+else:
+    print('len(sku_item_name_) != len(discountPrice_price_) != len(sku_item_sale_num_)')
